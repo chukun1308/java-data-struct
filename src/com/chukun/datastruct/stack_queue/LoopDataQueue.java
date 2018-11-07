@@ -9,10 +9,10 @@ package com.chukun.datastruct.stack_queue;
  */
 public class LoopDataQueue<E> implements DataQueue<E> {
 
-    private E[] array;
-    private int front;
-    private int tail;
-    private int size;
+    private E[] array; //定义数组
+    private int front; //定义front
+    private int tail;  //定义tail
+    private int size;  //定义大小
 
     public LoopDataQueue(int capacity){
         array = (E[]) new Object[capacity+1];//默认会浪费一个空间

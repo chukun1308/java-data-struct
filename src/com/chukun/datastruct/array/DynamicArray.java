@@ -137,6 +137,12 @@ public class DynamicArray<E> {
             remove(index);
     }
 
+    public void swap(int i,int j){
+        E temp = dataArray[i];
+        dataArray[i]  = dataArray[j];
+        dataArray[j]=temp;
+    }
+
     @Override
     public String toString(){
 

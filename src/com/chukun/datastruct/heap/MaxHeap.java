@@ -68,4 +68,47 @@ public class MaxHeap <E extends Comparable<E>>{
             parent = parent(currentIndex);
         }
     }
+
+    /**
+     * 获取最大堆，的最大值
+     * @return
+     */
+    public E getMaxData(){
+        if(data.getSize()==0){
+            throw  new IllegalArgumentException("can not find max data when heap is empty");
+        }
+        return data.get(0);
+    }
+
+    /**
+     * 去除最大堆，堆顶的元素，涉及下沉操作
+     * @return
+     */
+    public E exactMaxData(){
+        E ret = getMaxData();
+        data.swap(0,data.getSize()-1);
+        data.removeLast();
+        siftDown(0);
+        return ret;
+    }
+
+    /**
+     * 最大堆的下浮操作
+     * @param index
+     */
+    private void siftDown(int index) {
+        while(left(index)<data.getSize()){
+            int j = left(index);
+            if(j+1<data.getSize() && data.get(j+1).compareTo(data.get(j))>0){
+                j++;
+            }
+            if(data.get(index).compareTo(data.get(j))>0){
+                break;
+            }
+            //最大值交换
+            data.swap(index,j);
+            index = j;
+        }
+    }
+
 }

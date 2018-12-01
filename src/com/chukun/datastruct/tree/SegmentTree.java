@@ -1,5 +1,4 @@
 package com.chukun.datastruct.tree;
-
 import com.chukun.datastruct.inf.MergeOperator;
 
 /**
@@ -106,6 +105,31 @@ public class SegmentTree<E> {
         E leftResult = query(treeIndex,l,mid,queryL,mid);
         E rightResult = query(treeIndex,mid+1,r,mid+1,queryR);
         return mergeOperator.merge(leftResult,rightResult);
+    }
+
+    //线段树的更新操作
+    public void set(int index,E e){
+        if(index < 0 || index >= data.length)
+            throw new IllegalArgumentException("Index is illegal");
+        data[index] = e;
+        set(0,0,data.length-1,index,e);
+    }
+    // 在以treeIndex为根的线段树中更新index的值为e
+    private void set(int treeIndex,int l,int r,int index,E e){
+        if(l==r){
+            tree[treeIndex] = e;
+            return;
+        }
+        int mid = l+(r-l)/2;
+        // treeIndex的节点分为[l...mid]和[mid+1...r]两部分
+        int leftChildIndex = leftChild(treeIndex);
+        int rightChildIndex = rightChild(treeIndex);
+        if(index>=mid){
+            set(rightChildIndex,mid+1,r,index,e);
+        }else{
+            set(leftChildIndex,l,mid,index,e);
+        }
+        tree[treeIndex] = mergeOperator.merge(tree[leftChildIndex],tree[rightChildIndex]);
     }
 
 

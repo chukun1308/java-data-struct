@@ -102,8 +102,8 @@ public class SegmentTree<E> {
             return query(leftChildIndex,l,mid,queryL,queryR);
         }
         //查找的区间横跨左右区间
-        E leftResult = query(treeIndex,l,mid,queryL,mid);
-        E rightResult = query(treeIndex,mid+1,r,mid+1,queryR);
+        E leftResult = query(leftChildIndex,l,mid,queryL,mid);
+        E rightResult = query(rightChildIndex,mid+1,r,mid+1,queryR);
         return mergeOperator.merge(leftResult,rightResult);
     }
 

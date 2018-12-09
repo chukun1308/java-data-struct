@@ -2,6 +2,7 @@ package com.chukun.datastruct.tree;
 
 /**
  * AVLTree 的基本操作
+ * AVL树的难点在于删除与添加节点，怎么维持树的平衡性
  */
 public class AVLTree<K extends Comparable<K>, V> {
 

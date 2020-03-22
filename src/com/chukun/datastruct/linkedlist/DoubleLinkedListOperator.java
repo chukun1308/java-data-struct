@@ -1,6 +1,6 @@
 package com.chukun.datastruct.linkedlist;
 
-import com.chukun.data.structure.enums.OrderEnum;
+import com.chukun.datastruct.enums.OrderEnum;
 
 /**
  * @author chukun

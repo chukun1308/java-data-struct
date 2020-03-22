@@ -1,6 +1,7 @@
 package com.chukun.datastruct.linkedlist;
 
-import com.chukun.data.structure.enums.OrderEnum;
+import com.chukun.datastruct.enums.OrderEnum;
+
 import java.util.Optional;
 import java.util.Stack;
 
@@ -16,7 +17,7 @@ public class SingleLinkedListExamination {
         HeroNode newHeroNode04 = new HeroNode("04","公孙胜","入云龙");
         HeroNode newHeroNode03 = new HeroNode("03","吴用","智多星");
         HeroNode newHeroNode02 = new HeroNode("02","卢俊义","玉麒麟");
-        singleLinkedList.addHeroNodeByOrder(newHeroNode01, OrderEnum.ASC);
+        singleLinkedList.addHeroNodeByOrder(newHeroNode01,OrderEnum.ASC);
         singleLinkedList.addHeroNodeByOrder(newHeroNode04,OrderEnum.ASC);
         singleLinkedList.addHeroNodeByOrder(newHeroNode03,OrderEnum.ASC);
         singleLinkedList.addHeroNodeByOrder(newHeroNode02,OrderEnum.ASC);

@@ -75,6 +75,6 @@ crashlytics-build.properties
 fabric.properties
 
 # Editor-based Rest Client
+.idea
 .idea/httpRequests
-
-/java-data-struct.iml
+java-data-struct.iml

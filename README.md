@@ -6,7 +6,7 @@
 无论是个人、团队、或是企业，都能够用码云实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
 
 #### 软件架构
-软件架构说明
+ 主要介绍一些常用的数据结构与算法
 
 
 #### 安装教程
